@@ -11,13 +11,13 @@ $_SERVER["REQUEST_URI2"] = substr($_SERVER["REQUEST_URI"],strlen($_SERVER["SCRIP
 $_SERVER["REQUEST_URIpure"] = strtok($_SERVER["REQUEST_URI2"], '?');
 
 switch ($_SERVER["REQUEST_URIpure"]) {
-    case "/raid.json":
+    case "/nagios/raid.json":
         require_once(__DIR__."/inc_raid.php");
         exit;
-    case "/cpu.json":
+    case "/nagios/cpu.json":
         require_once(__DIR__."/inc_cpu.php");
         exit;
-    case "/disk.json":
+    case "/nagios/disk.json":
         require_once(__DIR__."/inc_disk.php");
         exit;
     default:
