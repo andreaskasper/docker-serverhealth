@@ -38,7 +38,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: andreaskasper/serverhealth:latest,andreaskasper/serverhealth:autobuild
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/serverhealth:latest,${{ secrets.DOCKERHUB_USERNAME }}/serverhealth:autobuild
 
       
       
