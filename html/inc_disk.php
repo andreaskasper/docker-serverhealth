@@ -4,11 +4,12 @@ $out = array("result" => array());
 
 $ds = disk_total_space("/");
 $df = disk_free_space("/");
+$du = $ds-$df;
 
-if ($df >= $ds*0.9) $out["result"]["state"] = 2;
-elseif ($df >= $ds*0.8) $out["result"]["state"] = 1;
+if ($du >= $ds*0.9) $out["result"]["state"] = 2;
+elseif ($du >= $ds*0.8) $out["result"]["state"] = 1;
 else $out["result"]["state"] = 0;
-$out["result"]["txt"] = "Free: ".formatBytes($df,1)."/".formatBytes($ds,1);
+$out["result"]["txt"] = "Diskusage: ".formatBytes($du,1)."/".formatBytes($ds,1)." => ".number_format(100*$du/$ds, 1, ".", ",")."%";
 
 
 header("Content-Type: application/json");
