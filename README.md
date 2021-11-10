@@ -12,6 +12,8 @@ Get important infos, stats and health from your self-operating servers via Nagio
 ![Github Issues](https://img.shields.io/github/issues/andreaskasper/docker-serverhealth.svg)
 
 ### Stats:
+![Activities](https://img.shields.io/github/commit-activity/m/andreaskasper/docker-serverhealth.svg)
+![Last Commit](https://img.shields.io/github/last-commit/andreaskasper/docker-serverhealth.svg)
 ![Code Languages](https://img.shields.io/github/languages/top/andreaskasper/docker-serverhealth.svg)
 ![Docker Pulls](https://img.shields.io/docker/pulls/andreaskasper/serverhealth.svg)
 
