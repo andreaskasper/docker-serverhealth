@@ -5,6 +5,7 @@ Get important infos, stats and health from your self-operating servers via Nagio
 - [x] Simple nagios or prometheus metrics in a container
 
 ### Build status:
+[![Build Status](https://img.shields.io/github/workflow/status/andreaskasper/docker-serverhealth/Docker%20Image%20CI)](https://hub.docker.com/r/andreaskasper/serverhealth)
 ![Build Status](https://img.shields.io/docker/image-size/andreaskasper/serverhealth/latest)
 
 ### Bugs & Issues:
@@ -41,6 +42,9 @@ $ docker run -d -h example.com -p 8080:80 -e API_KEY=changethis123 andreaskasper
 - [ ] Build tests
 - [ ] Gnomes
 - [ ] Profit
+
+### Links
+[🐋 Docker Hub](https://hub.docker.com/r/andreaskasper/serverhealth)
 
 ### support the projects :hammer_and_wrench:
 [![donate via Patreon](https://img.shields.io/badge/Donate-Patreon-green.svg)](https://www.patreon.com/AndreasKasper)
