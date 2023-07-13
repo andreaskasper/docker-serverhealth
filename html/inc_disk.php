@@ -2,14 +2,22 @@
 
 $out = array("result" => array());
 
+if (!empty($_GET["warn"]) AND is_numeric($_GET["warn"])) $warn = $_GET["warn"]+0; else $warn = 80;
+if (!empty($_GET["crit"]) AND is_numeric($_GET["crit"])) $crit = $_GET["crit"]+0; else $crit = 95;
+
 $ds = disk_total_space("/");
 $df = disk_free_space("/");
 $du = $ds-$df;
+$proz = 100-(100*$df-$ds);
 
-if ($du >= $ds*0.9) $out["result"]["state"] = 2;
-elseif ($du >= $ds*0.8) $out["result"]["state"] = 1;
+if ($proz >= $crit) $out["result"]["state"] = 2;
+elseif ($proz >= $warn) $out["result"]["state"] = 1;
 else $out["result"]["state"] = 0;
-$out["result"]["txt"] = "Diskusage: ".formatBytes($du,1)."/".formatBytes($ds,1)." => ".number_format(100*$du/$ds, 1, ".", ",")."%";
+$out["result"]["txt"] = "Diskusage: ".formatBytes($du,1)."/".formatBytes($ds,1)." => ".round(100-$proz, 1, ".", ",")."% left ---- ".round($proz, 1, ".", ",")."% full";
+
+$out["result"]["perf"]["value"] = (100-$proz);
+$out["result"]["perf"]["unit"] = "%";
+$out["result"]["perf"]["label"] = "diskfree";
 
 
 header("Content-Type: application/json");
