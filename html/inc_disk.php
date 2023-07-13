@@ -8,7 +8,7 @@ if (!empty($_GET["crit"]) AND is_numeric($_GET["crit"])) $crit = $_GET["crit"]+0
 $ds = disk_total_space("/");
 $df = disk_free_space("/");
 $du = $ds-$df;
-$proz = 100-(100*$df-$ds);
+$proz = 100-(100*$df/$ds);
 
 if ($proz >= $crit) $out["result"]["state"] = 2;
 elseif ($proz >= $warn) $out["result"]["state"] = 1;
