@@ -13,7 +13,7 @@ $proz = 100-(100*$df-$ds);
 if ($proz >= $crit) $out["result"]["state"] = 2;
 elseif ($proz >= $warn) $out["result"]["state"] = 1;
 else $out["result"]["state"] = 0;
-$out["result"]["txt"] = "Diskusage: ".formatBytes($du,1)."/".formatBytes($ds,1)." => ".round(100-$proz, 1, ".", ",")."% left ---- ".round($proz, 1, ".", ",")."% full";
+$out["result"]["txt"] = "Diskusage: ".formatBytes($du, 1)."/".formatBytes($ds, 1)." => ".round(100-$proz, 1)."% left ---- ".round($proz, 1)."% full";
 
 $out["result"]["perf"]["value"] = (100-$proz);
 $out["result"]["perf"]["unit"] = "%";
