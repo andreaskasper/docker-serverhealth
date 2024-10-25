@@ -3,6 +3,7 @@ Get important infos, stats and health from your self-operating servers via Nagio
 
 ### Features
 - [x] Simple nagios or prometheus metrics in a container
+- [x] Includes Prometheus metrics 
 
 ### Build status:
 [![Docker Image CI](https://github.com/andreaskasper/docker-serverhealth/actions/workflows/docker-image.yml/badge.svg)](https://github.com/andreaskasper/docker-serverhealth/actions/workflows/docker-image.yml)
