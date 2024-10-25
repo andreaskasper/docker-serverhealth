@@ -20,6 +20,9 @@ switch ($_SERVER["REQUEST_URIpure"]) {
     case "/nagios/disk.json":
         require_once(__DIR__."/inc_disk.php");
         exit;
+    case "/metrics":
+        require_once(__DIR__."/inc_prometheus.metrics.php");
+        exit;
     default:
         http_response_code(404);
         exit;
